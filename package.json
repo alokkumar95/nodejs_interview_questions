@@ -1,0 +1,23 @@
+{
+  "name": "nodejs_interview_questions",
+  "version": "1.0.0",
+  "description": "List of Nodejs Interview Questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alokkumar95/nodejs_interview_questions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alokkumar95/nodejs_interview_questions/issues"
+  },
+  "homepage": "https://github.com/alokkumar95/nodejs_interview_questions#readme",
+  "devDependencies": {
+    "jest": "^29.6.2"
+  }
+}
