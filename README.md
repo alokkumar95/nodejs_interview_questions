@@ -21,3 +21,6 @@ In Node.js each file is treated as a separate module.
 
 > Each Module has its own scope
 
+
+## Module Caching
+
