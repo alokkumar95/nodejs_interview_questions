@@ -21,6 +21,7 @@ function handleErrorsLogin(err){
   if(err.message==='Incorrect Password'){
     errors.email = 'This Password is not correct';
   }
+  return errors;
 }
 
 const maxAge = 3 * 24 * 60 * 60;// in seconds
@@ -66,6 +67,7 @@ module.exports.login_post = async (req, res) => {
 
   }catch(err){
     let errors = handleErrorsLogin(err);
+    console.log("errror",err)
     res.status(400).json({errors})
   }
 };

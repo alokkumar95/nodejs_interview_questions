@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": " NODE_ENV=test jest",
+    "start": "NODE_ENV=development nodemon app.js"
   },
   "keywords": [
     "node.js",
@@ -16,6 +16,12 @@
   ],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
@@ -28,5 +34,9 @@
     "nodemon": "^3.0.1",
     "sequelize": "^6.33.0",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
   }
 }
