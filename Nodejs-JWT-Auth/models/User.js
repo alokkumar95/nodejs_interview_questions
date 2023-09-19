@@ -33,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
 
   User.login = async function(email,password){
     const user = await this.findOne({where:{email:email}})
-    console.log("user",user)
     if(user){
       const auth = await bcrypt.compare(password,user.password);
       if(auth){

@@ -58,7 +58,6 @@ module.exports.signup_post = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
   const { email, password } = req.body;
-  console.log("--",email,password)
   try{
     const user = await User.login(email,password);
     const token = createToken(user.id);
@@ -67,7 +66,6 @@ module.exports.login_post = async (req, res) => {
 
   }catch(err){
     let errors = handleErrorsLogin(err);
-    console.log("errror",err)
     res.status(400).json({errors})
   }
 };

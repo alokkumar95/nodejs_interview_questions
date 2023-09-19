@@ -13,7 +13,6 @@ const requireAuth = (req,res,next)=>{
                 console.log(error.message)
                 res.redirect("/login")
             }else{
-                console.log(decodedToken)
                 next();
             }
         })
@@ -31,15 +30,12 @@ const checkUser = (req,res,next)=>{
     if(token){
         jwt.verify(token,'Interview Secret',async (err,decodedToken)=>{
             if(err){
-                console.log("--000---",err.message);
                 res.locals.user = null;
                 next();
             }else{
-                console.log(decodedToken);
                 let user = await User.findOne({where:{
                     id:decodedToken.id
                 }})
-                console.log("user---",user)
                 res.locals.user = user
                 next();
 
