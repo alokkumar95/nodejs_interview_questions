@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql");
 const db = require("./models");
 const cookieParser = require("cookie-parser");
-const { requireAuth } = require("./middlewares/authMiddleware");
+const { requireAuth, checkUser } = require("./middlewares/authMiddleware");
 
 const authRoutes = require("./routes/authRoutes");
 const PORT = 3000;
@@ -24,6 +24,7 @@ function spinServer(port = PORT) {
 }
 
 // routes
+app.get("*",checkUser);
 app.get("/", (req, res) => res.render("home"));
 app.get("/cart", requireAuth, (req, res) => res.render("cart"));
 
