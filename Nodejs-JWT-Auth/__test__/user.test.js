@@ -89,7 +89,7 @@ describe("POST /signup -- unsuccessfull - non valid email", () => {
 // New user signup and then login - edit
 describe("POST /signup - successful then POST /login", () => {
   const data = {
-    email: "sidhart2@email.com",
+    email: "niyat1@email.com",
     password: "1a2b3c",
   };
   it("Successful user signup", async () => {
@@ -119,7 +119,7 @@ describe("POST /signup - successful then POST /login", () => {
 describe("POST /login - with unregistered user", () => {
   it("unsuccessful user login", async () => {
     const data = {
-      email: "ritwik2@email.com",
+      email: "chanda1@email.com",
       password: "1a2b3c",
     };
 
